@@ -1,0 +1,613 @@
+---
+deploy: transparent
+reverse_transparent: "on"
+reverse_client_ip: ""
+reverse_xfwd4: X-Forwarded-For
+reverse_xfwd4_status: "on"
+webapps:
+  2:
+    name: 四方卫星
+    ip: 10.100.9.101
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "on"
+    ssl_protocols:
+    - SSLv3
+    - TLSv1
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list:
+    - hosts:
+      - www.cctv.com
+      - ' login.cctv.com'
+      rule: 1
+      https_public:
+      - api.firstp2p.com
+      - /waf/config/ssl.key/ssl.2.append.5b0f14e0be8c6.cer
+      - true
+      https_private:
+      - ok
+      - /waf/config/ssl.key/ssl.2.append.5b0f14e0be8c6.key
+      - true
+      https_chain:
+      - ""
+      - ""
+      - true
+      https_webproxy:
+      - ""
+      - /waf/config/ssl.key/ssl.2.append.5b0f14e0be8c6.pem
+      - ""
+    - hosts:
+      - www.baidu.com
+      - ' static.baidu.com'
+      rule: 4
+      https_public:
+      - www.spdbccc.com.cn
+      - /waf/config/ssl.key/ssl.2.append.5b0f14e0bf481.cer
+      - true
+      https_private:
+      - ok
+      - /waf/config/ssl.key/ssl.2.append.5b0f14e0bf481.key
+      - true
+      https_chain:
+      - ok
+      - /waf/config/ssl.key/ssl.2.append.5b0f14e0bf481.ca
+      - true
+      https_webproxy:
+      - ""
+      - /waf/config/ssl.key/ssl.2.append.5b0f14e0bf481.pem
+      - ""
+    linkage:
+    - Protect1
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    entry: 2
+    deploy: transparent
+    enabled: "on"
+    acls:
+      1:
+        id: 1527690499
+        type: ip
+        content: 1.3.3.4
+        action: pass
+        _content:
+        - 1.3.3.4
+        - 1.3.3.4
+    log: premium
+    firewall: []
+    https_public:
+    - media.2016g20.org
+    - /waf/config/ssl.key/ssl.2.cer
+    https_private:
+    - ok
+    - /waf/config/ssl.key/ssl.2.key
+    https_chain:
+    - ok
+    - /waf/config/ssl.key/ssl.2.ca
+    https_webproxy:
+    - ""
+    - /waf/config/ssl.key/ssl.2.pem
+    - ""
+  3:
+    name: 交通货代项目
+    ip: 10.100.9.52
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    entry: 3
+    deploy: transparent
+    enabled: "on"
+    acls: []
+    log: premium
+    firewall: []
+  4:
+    name: 地图服务
+    ip: 10.100.9.102
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    entry: 4
+    deploy: transparent
+    enabled: "on"
+    acls: []
+    log: premium
+    firewall: []
+  5:
+    name: 跨境测试
+    ip: 10.100.9.190
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    entry: 5
+    deploy: transparent
+    enabled: "off"
+    acls: []
+    log: premium
+    firewall: []
+  6:
+    name: 跨境购
+    ip: 10.100.9.140
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "on"
+    blacklist: "on"
+    enabled: "on"
+    acls:
+      1:
+        id: 1508748524
+        type: ip
+        content: 6.100.4.130
+        action: pass
+        _content:
+        - 6.100.4.130
+        - 6.100.4.130
+      2:
+        id: 1508748576
+        type: ip
+        content: 10.100.4.77
+        action: pass
+        _content:
+        - 10.100.4.77
+        - 10.100.4.77
+      3:
+        id: 1508748597
+        type: ip
+        content: 10.100.4.70
+        action: pass
+        _content:
+        - 10.100.4.70
+        - 10.100.4.70
+      4:
+        id: 1508748618
+        type: ip
+        content: 6.100.4.77
+        action: pass
+        _content:
+        - 6.100.4.77
+        - 6.100.4.77
+      5:
+        id: 1508748634
+        type: ip
+        content: 10.100.4.49
+        action: pass
+        _content:
+        - 10.100.4.49
+        - 10.100.4.49
+      6:
+        id: 1508748650
+        type: ip
+        content: 6.100.4.49
+        action: pass
+        _content:
+        - 6.100.4.49
+        - 6.100.4.49
+      7:
+        id: 1527690840
+        type: ip
+        content: 11.33.33.44
+        action: pass
+        _content:
+        - 11.33.33.44
+        - 11.33.33.44
+    firewall: []
+    log: premium
+    entry: 6
+    deploy: transparent
+    mask: 255.255.255.0
+  7:
+    name: 外部项目
+    ip: 10.100.9.100
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "on"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 7
+    deploy: transparent
+    mask: 255.255.255.0
+  8:
+    name: 口岸项目1
+    ip: 10.100.9.57
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 8
+    deploy: transparent
+    mask: 255.255.255.0
+  9:
+    name: 跨境测试1
+    ip: 10.100.9.55
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 9
+    deploy: transparent
+    mask: 255.255.255.0
+  10:
+    name: 测试环境
+    ip: 10.100.9.153
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 10
+    deploy: transparent
+    mask: 255.255.255.0
+  11:
+    name: 内部环境
+    ip: 10.100.9.141
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    entry: 11
+    deploy: transparent
+    enabled: "on"
+    acls: []
+    log: premium
+    firewall: []
+  12:
+    name: 电子口岸应急
+    ip: 10.100.9.154
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 12
+    deploy: transparent
+    mask: 255.255.255.0
+  13:
+    name: 四方物流应急
+    ip: 10.100.9.152
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 13
+    deploy: transparent
+    mask: 255.255.255.0
+  14:
+    name: 口岸项目
+    ip: 10.100.9.157
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 14
+    deploy: transparent
+    mask: 255.255.255.0
+  15:
+    name: 四方物流项目
+    ip: 10.100.9.158
+    port: "80"
+    rule: "4"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list: []
+    linkage:
+    - Protect3
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 15
+    deploy: transparent
+    mask: 255.255.255.0
+...

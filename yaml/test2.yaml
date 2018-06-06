@@ -1,0 +1,116 @@
+---
+deploy: transparent
+reverse_transparent: "on"
+reverse_client_ip: ""
+reverse_xfwd4: X-Forwarded-For
+reverse_xfwd4_status: "on"
+webapps:
+  1:
+    name: demo
+    ip: 1.1.1.1
+    port: "80"
+    rule: "1"
+    keepalive: "off"
+    statslog: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "off"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    domain_list:
+    - rule: 1
+      hosts:
+      - www.baidu.com
+      - xxx.baidul.com
+    - rule: 1
+      hosts:
+      - www.cctv.com
+      - xxx.cctv.com
+    linkage:
+    - Protect1
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    enabled: "on"
+    acls: []
+    firewall: []
+    log: premium
+    entry: 1
+    deploy: transparent
+    mask: 255.255.255.0
+  2:
+    name: 123-https
+    ip: 192.168.26.123
+    port: "443"
+    rule: "2"
+    keepalive: "off"
+    statslog: "off"
+    virtualpatch: "off"
+    intellect_defence_enabled: "off"
+    statslog_querystring: "off"
+    statslog_filter: none
+    statslog_filetypes: ""
+    statslog_defaultfile: index.html
+    https: "on"
+    ddos: "off"
+    cache: "off"
+    compression_server: "off"
+    compression_client: "off"
+    tamper: "off"
+    linkage:
+    - Protect1
+    domain_list:
+    - hosts:
+      - aaa.com
+      rule: 2
+      https_public:
+      - WAF
+      - /waf/config/ssl.key/ssl.2.append.5b0fa680ae2e7.cer
+      - true
+      https_private:
+      - ok
+      - /waf/config/ssl.key/ssl.2.append.5b0fa680ae2e7.key
+      - true
+      https_chain:
+      - ""
+      - ""
+      - true
+      https_webproxy:
+      - ""
+      - /waf/config/ssl.key/ssl.2.append.5b0fa680ae2e7.epem.decrypt
+      - ""
+    header_del: "off"
+    header_dels:
+    - ""
+    vlan: auto
+    acls_check_native: "on"
+    acls_check_xfwd4: "off"
+    blacklist: "on"
+    entry: 2
+    deploy: transparent
+    enabled: "on"
+    acls: []
+    log: advanced
+    firewall: []
+    virtualpatchfile: ""
+    https_public:
+    - WAF
+    - /waf/config/ssl.key/ssl.2.cer
+    https_private:
+    - ok
+    - /waf/config/ssl.key/ssl.2.key
+    https_webproxy:
+    - ""
+    - /waf/config/ssl.key/ssl.2.epem.decrypt
+    - ""
+...
